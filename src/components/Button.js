@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types'
 import className from 'classnames';
 
-function Button({children,primary,secondary,success,warning,danger,outline,rounded},...rest){
+function Button({children,primary,secondary,success,warning,danger,outline,rounded,...rest}){
 
-    console.log(children,primary,secondary,success,warning,danger,outline,rounded);
-    console.log(rest.sing);
 
 
     const finalclassname = className(  /*The className function will help to concat the strings with the help of booleans and won't add the unassinged values to it. */
@@ -23,15 +21,15 @@ function Button({children,primary,secondary,success,warning,danger,outline,round
         'bg-white text-emerald-500':outline && success, 
         'bg-white text-yellow-600':outline && warning, 
         'bg-white text-red-600':outline && danger,
-    },
+    },rest.className,
         );
 
     return <div>
-    <button className={finalclassname}>{children}</button>
+    <button {...rest}className={finalclassname}>{children}</button> 
     
     </div> 
-}
-
+}/*"The ...rest operator will receive all the event handlers and send them directly to the button properties without connecting to our custom props. 
+The rest.className parameter will take the individual props' designs for the component and override them to customize that specific component."*/
 
 
 Button.propTypes={
