@@ -9,7 +9,7 @@ function Button({children,primary,secondary,success,warning,danger,outline,round
 
     const finalclassname = className(  /*The className function will help to concat the strings with the help of booleans and won't add the unassinged values to it. */
         
-        `px-5 py-4`, `border-2`, 'my-1', 'mx-4',
+        'flex items-center px-5 py-4 border-2 my-1 mx-4',
 
         {'border-sky-700 bg-sky-600 text-white': primary, /*will set the property only if the bool value becomes true. */
         'border-sky-500 bg-sky-400 text-white': secondary, 
@@ -17,12 +17,12 @@ function Button({children,primary,secondary,success,warning,danger,outline,round
         'border-yellow-600 bg-yellow-500 text-white': warning, 
         'border-red-600 bg-red-700 text-white': danger,
         'rounded':rounded,
-        'bg-white':outline, /*if outline is true, it will over ride with the previouse back ground color. */
-        'text-sky-700': outline&& primary,  /*if the both conditions are met then these rules with && will over ride the previouse ones  */
-        'text-sky-500':outline&&secondary, 
-        'text-emerald-500':outline&&success, 
-        'text-yellow-600':outline&&warning, 
-        'text-red-600':outline&&danger,
+        /*if outline is true, it will over ride with the previouse back ground color. *//*if the both conditions are met then these rules with && will over ride the previouse ones  */
+        'bg-white text-blue-700': outline && primary,  
+        'bg-white text-blue-500':outline && secondary, 
+        'bg-white text-emerald-500':outline && success, 
+        'bg-white text-yellow-600':outline && warning, 
+        'bg-white text-red-600':outline && danger,
     },
         );
 
