@@ -5,7 +5,7 @@ import { AiFillCaretRight,AiFillCaretDown } from "react-icons/ai";
 
 function Accordion({data}){
 
-    const [expanded,setExpanded]=useState(-1);
+    const [expanded,setExpanded]=useState(0);
 
     function updater(elementIndex){
         if(elementIndex===expanded){setExpanded(-1);}else{setExpanded(elementIndex);}
