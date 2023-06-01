@@ -11,16 +11,18 @@ function Dropdown({data,Display,InputHandler}){
 
     /*--------------This code will help to figure out where the user clicked and based on that will close and open the option list -------*/
     useEffect(() => {
-        const handler = (event) => {
-          if (!reference.current.contains(event.target)) {  /*current.contains(event.target) will check if it's clicked on the reference(the main div of dropdown) or not.*/
+        const ClickDetect = (event) => {
+          console.log("clickDetect function inside the use effect of Dropdown");
+          if (reference.current && !reference.current.contains(event.target)) {  /* if (!reference.current.contains(event.target)). current.contains(event.target) will check if it's clicked on the reference(the main div of dropdown) or not.*/
             view(false); 
           }
-        };
+          console.log("Finished click detect function in useffect of drop down");
+        }
     
-        document.addEventListener('click', handler, true);
+        document.addEventListener('click', ClickDetect, true);
 
         return () => {
-          document.removeEventListener('click', handler);
+          document.removeEventListener('click', ClickDetect);
         };
       }, []);
     /*------------------------------------------------------------*/

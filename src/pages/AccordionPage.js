@@ -1,30 +1,29 @@
-
-import {useState} from 'react'
-import { AiFillCaretRight,AiFillCaretDown } from "react-icons/ai";
+import Accordion from '../components/Accordion'
 
 
-function Accordion({data}){
-
-    const [expanded,setExpanded]=useState(0);
-
-    function updater(elementIndex){
-        if(elementIndex===expanded){setExpanded(-1);}else{setExpanded(elementIndex);}
-    };
-    let icon;
-
-
-    const dataInJSX = data.map((element)=>{
-        const isExpanded = data.indexOf(element) === expanded;
-
-        if(isExpanded) {icon= <AiFillCaretDown/>;} else {icon=<AiFillCaretRight/>;}
-        return<div key={data.indexOf(element)} className="border rounded">
-
-        <div className="flex p-3 bg-gray-50 border-b items-center cursor-pointer justify-between" onClick={()=>updater(data.indexOf(element))}>{element.title}{icon}</div>
-        {isExpanded&&<div className='border-b p-5'>{element.rand}</div>}
-        </div>
-    });
-    
-    return <div className='border-x border-t rounded'>{dataInJSX}</div>
+function AccordionPage(){
+   
+    return <div >
+        <div className="border rounded-xl border-2 border-zinc-200 py-2 px-2 w-3/5 text-center" >
+            <h1>Testing the Accordion</h1>
+            <Accordion data={data}/>
+        </div>  
+    </div>
 }
 
-export default Accordion;
+export default AccordionPage;
+
+
+/* ACCORDION COMPONENT */
+const rand = `The sun's golden rays danced upon the tranquil lake, painting the water in shimmering hues.
+    A gentle breeze rustled through the trees, carrying with it the sweet scent of blooming flowers.
+    The laughter of children echoed in the distance, filling the air with infectious joy.
+    A lone wolf howled at the moon, its mournful cry piercing the silence of the night.
+    The old oak tree stood tall and proud, its branches reaching towards the heavens.
+    The aroma of freshly baked bread wafted from the cozy bakery, enticing passersby.
+    Raindrops pitter-pattered on the rooftop, creating a soothing symphony of nature's percussion.
+    A colorful butterfly fluttered by, its delicate wings captivating all who beheld its beauty.`;
+
+
+const data = [{title:"Part 1", rand},{title:"Part 2", rand},{title:"Part 3", rand},{title:"Part 4", rand},{title:"Part 5", rand},{title:"Part 6", rand}];
+
