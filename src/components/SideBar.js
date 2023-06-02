@@ -13,7 +13,7 @@ function SideBar({data}){
         else{
             Selected="hover:font-bold";
         }
-        return <div className={Selected} key={element.path}><Link to={element.path}>{element.lable}</Link><br/></div>
+        return <div className={Selected} key={element.path}> <Link to={element.path}>{element.lable}</Link> <br/></div>
     });
 
     console.log(...SideBarJSX);
