@@ -5,7 +5,7 @@ function DropDownPage(){
     const [display, changeDisplay]= useState(null);
     return <div >
         
-        <div className='float-right'>
+        <div>
             <Dropdown data={options} Display={display} InputHandler={(item)=>{changeDisplay(item)}}/>
         </div>
     </div>
