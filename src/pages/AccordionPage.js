@@ -4,7 +4,7 @@ import Accordion from '../components/Accordion'
 function AccordionPage(){
    
     return <div >
-        <div className="border rounded-xl border-2 border-zinc-200 py-2 px-2 w-3/5 text-center" >
+        <div className="border rounded-xl border-2 border-zinc-200 py-2 px-2 w-5/5 text-center" >
             <h1>Testing the Accordion</h1>
             <Accordion data={data}/>
         </div>  
