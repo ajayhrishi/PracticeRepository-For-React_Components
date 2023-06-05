@@ -1,7 +1,6 @@
 import Counter from "../components/Counter"
-import Button from "../components/Button";
 import { useState } from "react";
-import { BsFillCaretDownFill,BsFillCaretUpFill,BsCheck2,BsFillPlusSquareFill,BsFillFileMinusFill } from "react-icons/bs";
+import { BsFillCaretDownFill,BsFillCaretUpFill,BsCheck2} from "react-icons/bs";
 
 
 /*Need to find the issue with this code.  */
@@ -30,7 +29,7 @@ function CounterPage(){
                                             that's why we have mentioned the Number(c)*/
 
     /*------------------------------------------*/
-    const CounterUI = <div className="bg-slate-600 border rounded drop-shadow-2xl p-8">
+    const CounterUI = <div className="bg-slate-600 border rounded-2xl drop-shadow-2xl p-8 w-1/2	">
 
         <p className="text-white text-center font-bold text-4xl m-4 mb-8">Counter</p>
 
@@ -51,8 +50,8 @@ function CounterPage(){
         <div className="justify-center ml-4">
         <div className={"flex w-16 border justify-center p-1 text-white"} onClick={()=>{setCount(Number(c))}}><BsCheck2/></div>
         <div className=" flex flex-row ">
-        <div className={"flex border text-white text-center w-8 h-6 justify-center p-1"} onClick={handleAddition}> <BsFillPlusSquareFill/></div>
-        <div className={"flex border text-white text-center w-8 h-6 justify-center p-1"} onClick={handleSubtraction}><BsFillFileMinusFill /></div>
+        <div className={"flex border text-white text-center w-8 h-8 justify-center  font-black text-xl"} onClick={handleAddition}> + </div>
+        <div className={"flex border text-white text-center w-8 h-8 justify-center font-black text-xl"} onClick={handleSubtraction}>-</div>
         </div>
 
         </div>
