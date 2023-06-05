@@ -21,14 +21,8 @@ const Navigator= ({children}) => {
     /*navigate function will help us to navigate through the app without reloading the page. */
 
     const navigate = (to) =>{
-        console.log('this is navigate function inside context, we received request to udpate the path to',
-        to);
         window.history.pushState({},'',to);
-        console.log('used the window.history.push state to change the location to', to);
-        console.log('current location we can find using the window.location.pathname is ', window.location.pathname);
         updatePath(to);
-        console.log('requested the state update to',to, 'as well, using the updatePath function inside context');
-        console.log('----------');
     };
 
     /*---------------------------------- */
